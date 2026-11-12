@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://8vbdgta6t018"]
+
+[ext_resource type="Script" uid="uid://cojdxx3lpmvys" path="res://hud.gd" id="1_37p78"]
+
+[node name="HUD" type="CanvasLayer" unique_id=845863334]
+script = ExtResource("1_37p78")
+
+[node name="ContenedorMonedas" type="Control" parent="." unique_id=282607552]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 391.0
+offset_bottom = 103.0
+
+[node name="LabelMonedas" type="Label" parent="ContenedorMonedas" unique_id=908443418]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 198.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 30
+text = "Monedas: 0"
+
+[node name="LabelVidas" type="Label" parent="ContenedorMonedas"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 65.0
+offset_right = 198.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 30
+text = "Vidas: 3"
+
+[node name="PantallaFin" type="Control" parent="."]
+visible = false
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="ColorRect" parent="PantallaFin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.043, 0.106, 0.227, 0.85)
+
+[node name="Centro" type="CenterContainer" parent="PantallaFin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caja" type="VBoxContainer" parent="PantallaFin/Centro"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Titulo" type="Label" parent="PantallaFin/Centro/Caja"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.72, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Resumen" type="Label" parent="PantallaFin/Centro/Caja"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = ""
+horizontal_alignment = 1
+
+[node name="BotonReintentar" type="Button" parent="PantallaFin/Centro/Caja"]
+custom_minimum_size = Vector2(260, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Reintentar"
+
+[node name="BotonMenu" type="Button" parent="PantallaFin/Centro/Caja"]
+custom_minimum_size = Vector2(260, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Menú principal"

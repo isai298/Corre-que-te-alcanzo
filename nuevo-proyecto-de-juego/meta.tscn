@@ -1,0 +1,33 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://meta.gd" id="1_meta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meta"]
+size = Vector2(80, 124)
+
+[node name="Meta" type="Area2D"]
+script = ExtResource("1_meta")
+
+[node name="Cupon" type="Polygon2D" parent="."]
+color = Color(0.96, 0.72, 0, 1)
+polygon = PackedVector2Array(-40, -60, 40, -60, 40, 64, -40, 64)
+
+[node name="Borde" type="Polygon2D" parent="."]
+color = Color(1, 0.95, 0.75, 1)
+polygon = PackedVector2Array(-32, -52, 32, -52, 32, 56, -32, 56)
+
+[node name="Texto" type="Label" parent="."]
+offset_left = -38.0
+offset_top = -30.0
+offset_right = 38.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0.043, 0.106, 0.227, 1)
+theme_override_font_sizes/font_size = 16
+text = "CUPÓN
+DORADO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_meta")

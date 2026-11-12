@@ -1,0 +1,95 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" path="res://arte/menu_fondo.png" id="2_fondo"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fondo")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Sombra" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.35)
+
+[node name="Centro" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caja" type="VBoxContainer" parent="Centro"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Titulo" type="Label" parent="Centro/Caja"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.72, 0, 1)
+theme_override_colors/font_outline_color = Color(0.043, 0.106, 0.227, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "SUPER MACHOTE"
+horizontal_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="Centro/Caja"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_outline_color = Color(0.043, 0.106, 0.227, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 26
+text = "Las aventuras de un vendedor en Mercadópolis"
+horizontal_alignment = 1
+
+[node name="BotonJugar" type="Button" parent="Centro/Caja"]
+custom_minimum_size = Vector2(280, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 26
+text = "Jugar"
+
+[node name="BotonNivel2" type="Button" parent="Centro/Caja"]
+custom_minimum_size = Vector2(280, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "Nivel 2: Mercadópolis"
+
+[node name="BotonSalir" type="Button" parent="Centro/Caja"]
+custom_minimum_size = Vector2(280, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 26
+text = "Salir"
+
+[node name="Ayuda" type="Label" parent="."]
+layout_mode = 0
+offset_top = 592.0
+offset_right = 1152.0
+offset_bottom = 640.0
+theme_override_colors/font_outline_color = Color(0.043, 0.106, 0.227, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 19
+text = "↑ / Espacio: saltar (otra vez en el aire = doble salto; mantén para planear)   ·   ↓: deslizarte   ·   ← →: frenar / acelerar"
+horizontal_alignment = 1

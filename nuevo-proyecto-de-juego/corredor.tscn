@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://corredor.gd" id="1_corredor"]
+
+[node name="Jugador" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_corredor")
+
+[node name="Movimientos" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Polvo" type="CPUParticles2D" parent="."]
+z_index = -1
+
+[node name="PolvoSalto" type="CPUParticles2D" parent="."]
+z_index = -1

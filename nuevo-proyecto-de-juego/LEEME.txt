@@ -1,0 +1,44 @@
+SUPER MACHOTE - corredor automático estilo Banana Kong (Godot 4)
+
+JUGAR: abrir el proyecto y presionar F5. Menú: "Jugar" (nivel 1) o "Nivel 2: Mercadópolis".
+
+CONTROLES
+  ↑ o Espacio ... saltar. En el aire otra vez = doble salto. Mantén pulsado después para PLANEAR.
+  ↓ ............. en el suelo: deslizarte (bajo los letreros). En el aire: caer rápido.
+  ← / → ......... frenar / acelerar un poco (el personaje corre solo).
+
+NIVEL 1 - Tec de Xalapa (~46,000 px, ~80 s)
+  Huecos, plataformas, obstáculos, letreros "EXAMEN" (deslízate), guardias (aplástalos),
+  globos voladores (aplástalos para ganar monedas), billetes rodantes, etiquetas de precio que
+  caen (avisan con un triángulo rojo), trampolines, monedas y tortas. Meta: Cupón Dorado.
+  PERSEGUIDOR: una bola de billetes (la Inflación) viene detrás. Si te golpean o caes, se
+  acerca; si te alcanza pierdes una vida. Aviso rojo + "¡CORRE!" cuando está cerca.
+
+NIVEL 2 - Mercadópolis (mercado al atardecer) + JEFE FINAL
+  Mismo estilo con arte nuevo y más dificultad. Al final entras a la calle del jefe:
+  Don Inflación huye de ti y te lanza billetes rodantes, globos y etiquetas.
+  Recoge los CUPONES DORADOS (flotando en la calle) para debilitarlo: con 3 cupones cae.
+  Si llegas al final de la calle sin vencerlo, das otra vuelta (los cupones reaparecen).
+  Al derrotarlo aparece el Cupón Dorado final.
+
+TORTAS = PODER AL AZAR (ya no pausa el juego): Imán (atrae monedas), Escudo (aguanta un golpe),
+  Turbo (rápido e imparable), Gigante (rompe todo), Súper Salto. El tiempo restante sale en pantalla.
+
+VIDAS: 3. Golpe, caída a un hueco o que te alcance la Inflación = -1. Con 0 = GAME OVER.
+
+ARCHIVOS CLAVE
+  nivel_tec.gd / .tscn ........ nivel 1 (genera el mapa por tramos con semilla fija)
+  nivel_mercado.gd / .tscn .... nivel 2 + arena del jefe (hereda de nivel_tec.gd)
+  corredor.gd / .tscn ......... personaje y poderes
+  perseguidor.gd, jefe.gd, cupon.gd, guardia.gd, globo.gd, rodante.gd, etiqueta.gd,
+  trampolin.gd, obstaculo.gd .. enemigos y objetos
+  ruleta_powerup.gd/.tscn ..... ruleta rápida de poderes
+  arte/ ....................... todo el pixel art
+  nivel_1.tscn ................ nivel ANTERIOR (ya no se usa)
+
+AJUSTES RAPIDOS
+  NivelTec/NivelMercado -> semilla (otro recorrido), inicio_x (empezar más adelante para probar).
+  nivel_tec.gd: longitud (largo del nivel). nivel_mercado.gd: ARENA_LARGO.
+  corredor.gd: SPEED / RUN_SPEED / JUMP_VELOCITY / gravedad_extra (dificultad).
+  perseguidor.gd: el 0.93 de la velocidad y el "1000" de distancia ajustan la presión.
+  jefe.gd: hp (vida), intervalos de ataque.

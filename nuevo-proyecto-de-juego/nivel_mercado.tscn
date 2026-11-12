@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://nivel_mercado.gd" id="1_nivel"]
+[ext_resource type="PackedScene" path="res://corredor.tscn" id="2_corredor"]
+[ext_resource type="PackedScene" uid="uid://8vbdgta6t018" path="res://hud.tscn" id="3_hud"]
+[ext_resource type="AudioStream" uid="uid://dmyaeglsfykqc" path="res://Conker’s-Bad-Fur-Day-Windy-_-Co.-HD.wav" id="4_musica"]
+
+[node name="NivelMercado" type="Node2D"]
+script = ExtResource("1_nivel")
+
+[node name="Jugador" parent="." instance=ExtResource("2_corredor")]
+
+[node name="MusicaFondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_musica")
+volume_db = -8.0
+autoplay = true
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]

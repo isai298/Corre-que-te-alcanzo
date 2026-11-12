@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cu362w266n46e"]
+
+[ext_resource type="Script" uid="uid://c0cnuwysnpra5" path="res://ruleta_powerup.gd" id="1_p0608"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruleta"]
+bg_color = Color(0.043, 0.106, 0.227, 0.94)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.96, 0.72, 0, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+content_margin_left = 48.0
+content_margin_top = 14.0
+content_margin_right = 48.0
+content_margin_bottom = 16.0
+
+[node name="RuletaPowerUp" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_p0608")
+
+[node name="Centro" type="CenterContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 96.0
+offset_bottom = 230.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Centro"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ruleta")
+
+[node name="Caja" type="VBoxContainer" parent="Centro/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Titulo" type="Label" parent="Centro/Panel/Caja"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.72, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "★  POWER UP  ★"
+horizontal_alignment = 1
+
+[node name="LabelResultado" type="Label" parent="Centro/Panel/Caja"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 42
+text = "..."
+horizontal_alignment = 1
+
+[node name="Nota" type="Label" parent="Centro/Panel/Caja"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.88, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "¡Sin parar, sigue corriendo!"
+horizontal_alignment = 1

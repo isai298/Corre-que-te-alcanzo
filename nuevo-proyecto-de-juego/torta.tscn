@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://hcujdrl0uoay"]
+
+[ext_resource type="Script" uid="uid://k5btrml2rdcf" path="res://torta.gd" id="1_1ulix"]
+[ext_resource type="Texture2D" uid="uid://bxyo5rr8h3gg0" path="res://Torta.png" id="2_u5jy0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_as48t"]
+radius = 35.0
+height = 72.0
+
+[node name="Torta" type="Area2D" unique_id=1665988646]
+script = ExtResource("1_1ulix")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=592972627]
+position = Vector2(516.5, 265.875)
+scale = Vector2(0.08981482, 0.12181664)
+texture = ExtResource("2_u5jy0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1093042546]
+position = Vector2(517, 267)
+shape = SubResource("CapsuleShape2D_as48t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
